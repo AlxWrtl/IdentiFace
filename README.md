@@ -70,7 +70,7 @@ This will create 5 augmented variations of each image found in `Augmented_Images
 
 ### 📈 2️⃣ Face Detection and Recognition
 
-Run the `iwhoIsIt.py` script with an input image and a dataset of known faces:
+Run the `whoIsIt.py` script with an input image and a dataset of known faces:
 
 ```bash
 python3 whoIsIt.py --i Your_Photo.jpeg --d Augmented_Images
@@ -81,9 +81,6 @@ Example:
 ```bash
 python3 identify_face.py --i Your_Photo.jpeg -p models/deploy.prototxt -m models/res10_300x300_ssd_iter_140000.caffemodel
 ```
-
-
-
 ---
 
 ## 🛠 Main Dependencies
