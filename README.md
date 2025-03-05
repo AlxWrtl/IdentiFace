@@ -52,23 +52,9 @@ IdentiFace/
 
 ## 🎯 Usage
 
-### 🔍 1️⃣ Face Detection and Recognition
+### 🔍 1️⃣  Facial Data Augmentation
 
-Run the `identify_face.py` script with an input image and a dataset of known faces:
-
-```bash
-python3 whoIsIt.py --i Your_Photo.jpeg --d Augmented_Images
-```
-
-Example:
-
-```bash
-python3 identify_face.py --i Your_Photo.jpeg -p models/deploy.prototxt -m models/res10_300x300_ssd_iter_140000.caffemodel
-```
-
-### 📈 2️⃣ Facial Data Augmentation
-
-If you want to generate image variations to improve recognition:
+Generate image variations to improve recognition:
 
 ```bash
 python3 FaceDataAugmentation.py --d <Images_Dataset_Path>
@@ -81,6 +67,22 @@ python3 FaceDataAugmentation.py --d /path/to/your/images
 ```
 
 This will create 5 augmented variations of each image found in `Augmented_Images/../`.
+
+### 📈 2️⃣ Face Detection and Recognition
+
+Run the `iwhoIsIt.py` script with an input image and a dataset of known faces:
+
+```bash
+python3 whoIsIt.py --i Your_Photo.jpeg --d Augmented_Images
+```
+
+Example:
+
+```bash
+python3 identify_face.py --i Your_Photo.jpeg -p models/deploy.prototxt -m models/res10_300x300_ssd_iter_140000.caffemodel
+```
+
+
 
 ---
 
