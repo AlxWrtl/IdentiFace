@@ -1,3 +1,12 @@
 albumentations
-opencv-contrib-python
+dlib
+face-recognition
+face-recognition-models
+imutils
 numpy
+opencv-contrib-python
+opencv-python-headless
+pillow
+pyyaml
+scipy
+setuptools
