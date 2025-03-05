@@ -81,7 +81,6 @@ Example:
 ```bash
 python3 identify_face.py --i Your_Photo.jpeg -p models/deploy.prototxt -m models/res10_300x300_ssd_iter_140000.caffemodel
 ```
-
 ---
 
 ## 🛠 Main Dependencies
