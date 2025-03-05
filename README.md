@@ -73,13 +73,13 @@ This will create 5 augmented variations of each image found in `Augmented_Images
 Run the `whoIsIt.py` script with an input image and a dataset of known faces:
 
 ```bash
-python3 whoIsIt.py --i Your_Photo.jpeg --d Augmented_Images or /path/to/your/images
+python3 whoIsIt.py --i Your_Photo.jpeg --d <Images_Dataset_Path>
 ```
 
 Example:
 
 ```bash
-python3 whoIsIt.py --i Your_Photo.jpeg --d Augmented_Images 
+python3 whoIsIt.py --i Your_Photo.jpeg --d Augmented_Images
 ```
 ---
 
