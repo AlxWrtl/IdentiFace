@@ -2,11 +2,11 @@
 
 ## 📌 Description
 
-This project implements a facial recognition system using OpenCV, dlib, and the face_recognition library. It allows:
+IdentiFace is a facial recognition system built with OpenCV, dlib, and the face_recognition library. This project enables:
 
-- Detection and recognition of faces in an image.
-- Facial data augmentation to improve model robustness.
-- Face identification by comparing an image with a database.
+- Face Detection & Recognition: Identify and recognize faces in images.
+- Facial Data Augmentation: Generate additional variations of face images to enhance model robustness.
+- Face Identification: Compare an input image with stored face encodings in a database.
 
 ---
 
@@ -22,7 +22,7 @@ cd IdentiFace
 ### 2️⃣ Create a virtual environment with `uv`
 
 ```bash
-uv venv .venv
+uv venv --python 3.10 .venv
 source .venv/bin/activate
 ```
 
@@ -38,14 +38,19 @@ uv pip install -r requirements.txt
 
 ```plaintext
 IdentiFace/
-│── identify_face.py            # Identify faces in an image
-│── FaceDataAugmentation.py     # Facial data augmentation script
-│── Augmented_Images/           # Dataset folder with all augmented images
-│── whoIsIt.py                  # Main face recognition script
-│── face_encodings.pkl          # Serialize the dataset file to speed up recognition
-│── requirements.txt            # List of dependencies
-│── .venv/                      # Virtual environment (excluded from the repo)
-└── README.md                   # Project documentation
+│── faceDataAugmentation.py                         # Facial data augmentation script
+│── identify_face.py                                # Identify faces in an image
+│── whoIsIt.py                                      # Main face recognition script
+│── save_trained_faces.py                           # Script to save trained face encodings
+│── requirements.txt                                # List of dependencies
+│── db/                                             # Database-related files
+│   ├── db_models.py                                # Database models for storing face encodings
+│   └── save_trained_faces.py                       # Script for saving faces to the database
+│── models/                                         # Pre-trained deep learning models for face detection
+│   ├── deploy.prototxt                             # Model configuration file
+│   └── res10_300x300_ssd_iter_140000.caffemodel    # Pre-trained face detection model
+│── .venv/                                          # Virtual environment (excluded from the repo)
+└── README.md                                       # Project documentation
 ```
 
 ---
@@ -54,33 +59,56 @@ IdentiFace/
 
 ### 🔍 1️⃣  Facial Data Augmentation
 
-Generate image variations to improve recognition:
+Generate image variations to improve facial recognition accuracy.
+
+If you don't have enough images, you can run this script to expand your dataset:
 
 ```bash
-python3 FaceDataAugmentation.py --d <Images_Dataset_Path>
+python3 FaceDataAugmentation.py -d <Images_Dataset_Path>
 ```
 
 Example:
 
 ```bash
-python3 FaceDataAugmentation.py --d /path/to/your/images
+python3 FaceDataAugmentation.py -d /path/to/your/images
 ```
 
 This will create 5 augmented variations of each image found in `Augmented_Images/../`.
 
-### 📈 2️⃣ Face Detection and Recognition
+### 📈 2️⃣ Import Data into Your Database
 
-Run the `whoIsIt.py` script with an input image and a dataset of known faces:
+Run the `save_trained_faces.py` script with a dataset of known faces:
 
 ```bash
-python3 whoIsIt.py --i Your_Photo.jpeg --d <Images_Dataset_Path>
+cd db
+python3 save_trained_faces.py -d <Images_Dataset_Path>
 ```
 
 Example:
 
 ```bash
-python3 whoIsIt.py --i Your_Photo.jpeg --d Augmented_Images
+cd db
+python3 save_trained_faces.py -d ../Augmented_Images
 ```
+
+### 📈 3️⃣ Face Detection and Recognition
+
+Run the `whoIsIt.py` script with an input image:
+
+```bash
+cd ..
+python3 whoIsIt.py -i <Path_to_Image>
+```
+
+Example:
+
+```bash
+cd ..
+python3 whoIsIt.py -i sample_image.jpeg
+```
+
+The script will automatically retrieve the dataset from the database.
+
 ---
 
 ## 🛠 Main Dependencies
@@ -97,6 +125,7 @@ python3 whoIsIt.py --i Your_Photo.jpeg --d Augmented_Images
 - **pyyaml** → YAML file management
 - **scipy** → Scientific computing
 - **setuptools** → Package management tool
+- **sqlalchemy** → Database management
 
 ---
 
