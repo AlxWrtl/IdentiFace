@@ -11,7 +11,7 @@ ap.add_argument("-c", "--confidence", type=float,
 args = vars(ap.parse_args())
 
 
-print("[INFO] Chargement des visages connus...")
+print("-- Load known faces --")
 known_encodings, known_names = load_encoding()
 print(f"{len(known_encodings)} visages connus chargés.")
 
