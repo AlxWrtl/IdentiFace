@@ -7,7 +7,7 @@ from db.db_models import load_encoding
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", required=True, help="Path to input image")
 ap.add_argument("-c", "--confidence", type=float,
-                default=0.2, help="Confidence threshold")
+                default=0.5, help="Confidence threshold")
 args = vars(ap.parse_args())
 
 
