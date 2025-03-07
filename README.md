@@ -57,11 +57,27 @@ IdentiFace/
 
 ## 🎯 Usage
 
+### 🔍 0️⃣  Facial Data Organization
+
+Your dataset should be structured as follows:
+
+```plaintext
+/data
+│── name1/
+│   └── photo.jpg
+│── name2/
+│   └── photo.jpg
+│── name3/
+│   └── photo.jpg
+```
+
+Each subfolder represents a person, and the images inside are used for facial augmentation and training the recognition system.
+
 ### 🔍 1️⃣  Facial Data Augmentation
 
 Generate image variations to improve facial recognition accuracy.
 
-If you don't have enough images, you can run this script to expand your dataset:
+If you don't have enough images in the Facial Data Organization step, you can run this script to expand your dataset:
 
 ```bash
 python3 FaceDataAugmentation.py -d <Images_Dataset_Path>
