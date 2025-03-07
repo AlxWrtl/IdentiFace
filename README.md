@@ -126,6 +126,7 @@ The script will automatically retrieve the dataset from the database.
 - **scipy** → Scientific computing
 - **setuptools** → Package management tool
 - **sqlalchemy** → Database management
+- **deepface** → Face analysis (emotion, age, gender, race)
 
 ---
 
