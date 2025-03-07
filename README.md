@@ -70,14 +70,14 @@ python3 FaceDataAugmentation.py -d <Images_Dataset_Path>
 Example:
 
 ```bash
-python3 FaceDataAugmentation.py -d /path/to/your/images
+python3 FaceDataAugmentation.py -d /path/to/your/dataset_images
 ```
 
-This will create 5 augmented variations of each image found in `Augmented_Images/../`.
+This will create 20 augmented variations of each image found in `Augmented_Images/`.
 
 ### 📈 2️⃣ Import Data into Your Database
 
-Run the `save_trained_faces.py` script with a dataset of known faces:
+Run the save_trained_faces.py script with a dataset of known faces to import them into an SQLite database.
 
 ```bash
 cd db
@@ -91,9 +91,11 @@ cd db
 python3 save_trained_faces.py -d ../Augmented_Images
 ```
 
+This script scans the dataset folder, detects faces in images, extracts their encodings, and stores them in faces.db. Each encoding is linked to a name and saved as a binary object for quick retrieval during recognition.
+
 ### 📈 3️⃣ Face Detection and Recognition
 
-Run the `whoIsIt.py` script with an input image:
+Run the whoIsIt.py script with an input image of a face you want to recognize based on the dataset stored in SQLite.
 
 ```bash
 cd ..
@@ -107,7 +109,7 @@ cd ..
 python3 whoIsIt.py -i sample_image.jpeg
 ```
 
-The script will automatically retrieve the dataset from the database.
+This script loads known face encodings from faces.db, detects faces in the input image, and compares them to identify matches. It displays the recognized name, confidence score, and the detected emotion.
 
 ---
 
