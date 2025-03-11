@@ -4,9 +4,10 @@
 
 IdentiFace is a facial recognition system built with OpenCV, dlib, and the face_recognition library. This project enables:
 
-- Face Detection & Recognition: Identify and recognize faces in images.
-- Facial Data Augmentation: Generate additional variations of face images to enhance model robustness.
-- Face Identification: Compare an input image with stored face encodings in a database.
+- **Facial Data Augmentation**: Generates enhanced variations of face images to improve recognition accuracy and model generalization.
+- **Face Identification & Database Management**: Stores and retrieves face encodings from an SQLite database for efficient and  fast identification.
+- **Face Detection & Recognition**: Detects and identifies faces in images using deep learning-based face encodings.
+
 
 ---
 
