@@ -1,13 +1,19 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Find people in a photo" },
+    {
+      name: "main page",
+      content: "welcome on IdentiFace to detect know faces in a photo",
+    },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <div className="flex flex-col justify-center items-center min-h-svh">
+      <p>Welcome to Identiface</p>
+    </div>
+  );
 }
