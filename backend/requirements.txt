@@ -12,3 +12,7 @@ scipy
 setuptools
 sqlalchemy
 deepface
+fastapi
+starlette
+uvicorn
+pydantic
