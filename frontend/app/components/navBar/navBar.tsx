@@ -29,6 +29,11 @@ export function NavBar() {
           <div className="flex flex-col gap-2">
             <Button variant="ghost" className="justify-start px-2 text-sm">
               <p>
+                <Link to="/">About</Link>
+              </p>
+            </Button>
+            <Button variant="ghost" className="justify-start px-2 text-sm">
+              <p>
                 <Link to="/Identifying">Identifying</Link>
               </p>
             </Button>
@@ -59,6 +64,11 @@ export function NavBar() {
       )}
       <div className="hidden md:flex items-center gap-2 bg-background">
         <MenubarMenu>
+          <MenubarTrigger className="text-sm">
+            <p>
+              <Link to="/">About</Link>
+            </p>
+          </MenubarTrigger>
           <MenubarTrigger className="text-sm">
             <p>
               <Link to="/Identifying">Identifying</Link>
